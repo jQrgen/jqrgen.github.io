@@ -2,26 +2,91 @@
 <html>
 	<head>
 	<meta charset="UTF-8">
-	<title>Arbeidernes dag</title>
+	<title>SOLIDARITETSØL</title>
+
+	<link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAA7v8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAAQEBAQEBAQEBAQAAAQEBAAABAQEAAAAAAAAAAAEBAQEAAAAAAAEBAAAAAAABAQEBAQAAAQEBAAAAAQEAAQEBAQEBAQEBAAAAAQEBAAEBAQAAAQEBAAAAAQEBAQABAQEAAAAAAAABAQEBAQEAAQEBAQAAAAABAQEBAQEAAAEBAQEBAAAAAAEBAQEAAAEBAQEBAQEAAAABAQEAAAEBAQEBAQEBAQEBAQAAAAEBAQEBAQEBAQEBAQAAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon" />
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	</head>
 
 	<body>
-		<h1>KAMERATER: 1. MAI ØL KJØPMANNSGATA 59</h1>
-		
-		<img src="awesome_lada.png" width="700px"/>
+			<div class="container">
 
-		<ul>
-				<li><h3>Kun verandaen</h3></li>
-				<li><h3>ØL</h3></li>
-				<li><h3>Kameratskap</h3></li>
-			</ul> 
-		<span>
-			<br>
-			<img src="mai_1_throwing_stone.jpg" height="260px"/>
-			<img src="mai_1_throwing_stone.jpg" height="260px"/>			
+		<span id="login">
+
 		</span>
 
-		<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+		<span id="invite">
+			<h1 style="color:red"><b>ARBEIDERNES SOLIDARITETSØL</b></h1>
+			
+			<span>
+				
+				<img src="awesome_lada.png" width="70%"/>
+				<img src="banderani.gif" width="20%"/>
+			</span>
+
+			<br>
+			<br>
+				<div width="100%">
+					<img src="animatedUSSRflag.gif" width="17%"/>
+					<img src="usaburn.gif" width="17%"/>
+					<img src="boycott-israel-anim.gif" width="17%"/>
+					<img src="anarchy.gif" width="17%"/>
+					<img src="kp-flag1.gif" width="17%"/>
+
+				</div>
+
+		</span>
+
+		<br>
+		<img src="communist.gif" width="100%"/>
+		<br>
+		<br>
+		<div class="row">
+				<div class="col-7">
+					<h2 style="color:red">INFORMASJON</h2>
+						<ul>
+								<li>KJØPMANNSGATA 59</li>
+								<li><b>I KVELD 30.04.2019 21:00</b></li>
+								<li>Kun verandaen -> Kontoret er låst</li>
+								<li>ØL</li>
+								<li>KAMERATSKAP</li>
+								<li>Kontakt: jQrgen <a href="tel:+4790080822">+4790080822</a> hvis du vil ta med randoms</li>
+							</ul> 
+				</div>
+				<div class="col-5">
+						<img src="no_shitcoins.jpg" width="130px"/>
+				</div>
+			</div>
+
+			<h2 style="color:red">PROGRAM</h2>
+
+			<ul>
+					<li>VELKOMMEN: 21:00</li>
+					<li>KAMERATSKAPSAPELL v/ jQrgen: 21:15</li>
+					<li>Kjetil: VODKA OG FRIHET: 21:30</li>
+					<li>SOLDANS: 22:00</li>
+					<li>KAMERATSKAP: 22:30</li>
+					<li>SLUTT: 24:00</li>
+			</ul>
+
+			<h2 style="color:red">PÅMELDING</h2>
+			<input id="attendInput" type="text" placeholder="Navn"> <button onclick="attend()">Join</button>
+			<h5 style="color:red">KOMMER:</h5>
+			<ul id="dynamic-list"></ul>
+		<span>
+			<br>
+			<img src="mai_1_throwing_stone.jpg" height="230px"/>
+			<img src="mai_1_throwing_stone.jpg" height="230px"/>			
+		</span>
+
+	</div>
+
+		
+		<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-firestore.js"></script>
+
 		<script>
 			// Initialize Firebase
 			var config = {
@@ -33,6 +98,41 @@
 				messagingSenderId: "1050243347372"
 			};
 			firebase.initializeApp(config);
+			
+			const db = firebase.firestore()
+
+			db.collection("attendees").doc("solidaritetsol")
+				.get().then(function(doc) {
+						const data = doc.data()["attending"]
+						data.forEach(attendee => {
+							addRSVP(attendee)
+						});
+				});
+
+			function attend() {
+				const attendInput = document.getElementById("attendInput")
+				const name = attendInput.value
+				attendInput.value = ""
+				
+				db.collection("attendees")
+				.doc("solidaritetsol")
+				.update({
+					attending: firebase.firestore.FieldValue.arrayUnion(name)
+				})
+
+				addRSVP(name)
+				window.alert("SES I KVELD KAMERAT")
+			}
+
+		function addRSVP(name){
+			var ul = document.getElementById("dynamic-list");
+			ul.remo
+			var li = document.createElement("li");
+			li.setAttribute('id',name);
+			li.appendChild(document.createTextNode(name));
+			ul.appendChild(li);
+
+		}
 		</script>
 	</body>
 
