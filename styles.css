@@ -243,6 +243,8 @@ h4 a { color: var(--ink); }
   margin-right: 0.5rem;
 }
 
+.pub-links { margin-top: 0.6rem; }
+
 .panel {
   display: flex;
   flex-wrap: wrap;
