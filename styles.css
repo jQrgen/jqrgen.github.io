@@ -236,6 +236,13 @@ h4 a { color: var(--ink); }
 
 .profile-links a:hover { border-color: var(--accent); }
 
+.profile-links .icon {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-right: 0.5rem;
+}
+
 .panel {
   display: flex;
   flex-wrap: wrap;
