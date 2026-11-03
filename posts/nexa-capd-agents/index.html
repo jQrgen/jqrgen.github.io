@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nexa CAPD for agent-to-agent communication and open-outcry P2P trading · Jørgen S. Notland</title>
+<meta name="description" content="A testnet concept: using Nexa CAPD so AI agents can discover each other and broadcast bids and offers, settling with partial transactions.">
+<link rel="canonical" href="https://jqrgen.com/posts/nexa-capd-agents/">
+<meta property="og:title" content="Nexa CAPD for agent-to-agent communication and open-outcry P2P trading">
+<meta property="og:description" content="A testnet concept: using Nexa CAPD so AI agents can discover each other and broadcast bids and offers.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://jqrgen.com/posts/nexa-capd-agents/">
+<meta property="og:image" content="https://jqrgen.com/posts/nexa-capd-agents/capd-agents.jpg">
+<meta property="og:site_name" content="Jørgen S. Notland">
+<meta name="theme-color" content="#f4f0e6">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+.post-figure{margin:1.5rem 0}
+.post-figure img{width:100%;height:auto;border-radius:8px;display:block}
+.post-figure figcaption{font-size:.875rem;opacity:.8;margin-top:.5rem}
+.post pre,.post code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+</style>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-header">
+<div class="wrap header-inner">
+<a class="brand" href="../../">Jørgen S. Notland</a>
+<nav class="site-nav" aria-label="Site">
+<a href="../../">Home</a>
+<a href="../../#writing">Writing</a>
+</nav>
+</div>
+</header>
+
+<main id="content">
+<div class="wrap post">
+<p class="kicker">Post · <time datetime="2026-11-03">3 November 2026</time></p>
+<h1>Nexa CAPD for agent-to-agent communication and open-outcry P2P trading</h1>
+
+<figure class="post-figure">
+<img src="capd-agents.jpg" width="1280" height="720" alt="Illustration of eight cartoon robots standing in a circle around a glowing round platform, each with a speech bubble showing arrows and symbols, connected by lines in a network.">
+<figcaption>AI-generated illustration.</figcaption>
+</figure>
+
+<p>I've been experimenting on testnet with Nexa CAPD (Counterparty and Protocol Discovery) as a building block for AI agents. This is a concept for now.</p>
+
+<p>CAPD is a messaging service built into Nexa full nodes. It is short-lived, decentralized and anonymous, and messages are looked up by their content. It's broadcast-only and best-effort: messages sit in each node's message pool ("msgPool") for a limited time, then expire. They're never written to the blockchain. Proof-of-work discourages spam.</p>
+
+<h2>Two ideas I'm exploring</h2>
+
+<h3>1) Agent-to-agent discovery and messaging</h3>
+<p>Agents broadcast what they offer or need, tagged with an app-specific prefix. Peers can filter messages by their first 16 bytes. Other agents pick up matching messages with <code>capd list</code> / <code>capd get</code>, so there's no central directory. The spec also names low-bandwidth messaging between two parties behind firewalls as a use case.</p>
+
+<h3>2) Open-outcry P2P trading between agents</h3>
+<p>Nexa's CAPD write-up says it enables an "open-outcry" communication style. Trade offers can carry partial transactions, and anyone listening can complete one and submit it to finalize the trade. Nexa's sighash design supports these multi-party partial transactions. Agents shout bids and offers; settlement happens on-chain between the two sides.</p>
+
+<h2>Caveats</h2>
+<p>Delivery is best-effort with no guarantees. If you're offline, you can miss messages.</p>
+<p>This is a concept/testnet experiment only. No mainnet use, no exchange or custody service run by anyone, and not financial advice.</p>
+
+<h2>Sources</h2>
+<ul class="plain">
+<li><a href="https://spec.nexa.org/network/capd/">Counterparty and Protocol Discovery (CAPD), Nexa specification</a></li>
+<li><a href="https://gitlab.com/nexa/nexa/-/blob/dev/doc/capd.md">doc/capd.md in the nexa/nexa repository</a></li>
+<li><a href="https://forum.nexa.org/t/nexa-counterparty-and-protocol-discovery-capd/1641">Nexa Counterparty and Protocol Discovery (CAPD), Nexa forum</a></li>
+<li><a href="https://doc-rpc.nexa.org/commands/capd/">capd RPC command, Nexa RPC API documentation</a></li>
+<li><a href="https://spec.nexa.org/transactions/1transaction/">Transactions overview, Nexa specification</a></li>
+</ul>
+<p><a href="../../">← Back to home</a></p>
+</div>
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<p>Static page. No analytics.</p>
+</div>
+</footer>
+</body>
+</html>
